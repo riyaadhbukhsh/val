@@ -167,7 +167,7 @@ body {
     background: white;
     padding: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    z-index: 0;
+    z-index: 10;
     border-radius: 8px;
     opacity: 0;
     transition: opacity 0.8s ease-in;
@@ -186,8 +186,8 @@ body {
 }
 
 .frame-1 {
-    width: 300px;
-    height: 300px;
+    width: 260px;
+    height: 260px;
     top: 8%;
     left: 5%;
     transform: rotate(-12deg);
@@ -195,8 +195,8 @@ body {
 }
 
 .frame-2 {
-    width: 380px;
-    height: 280px;
+    width: 340px;
+    height: 250px;
     top: 10%;
     right: 8%;
     transform: rotate(8deg);
@@ -204,17 +204,17 @@ body {
 }
 
 .frame-3 {
-    width: 250px;
-    height: 250px;
-    bottom: 15%;
-    left: 8%;
+    width: 220px;
+    height: 220px;
+    bottom: 8%;
+    left: 15%;
     transform: rotate(15deg);
     animation: breathe3 4.2s infinite ease-in-out;
 }
 
 .frame-4 {
-    width: 320px;
-    height: 260px;
+    width: 280px;
+    height: 230px;
     bottom: 12%;
     right: 6%;
     transform: rotate(-10deg);
@@ -222,8 +222,8 @@ body {
 }
 
 .frame-5 {
-    width: 240px;
-    height: 240px;
+    width: 210px;
+    height: 210px;
     top: 45%;
     left: 3%;
     transform: rotate(-18deg);
