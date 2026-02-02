@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hearts-background::before,
+.hearts-background::after {
+    content: '💕';
+    position: absolute;
+    font-size: 50px;
+    animation: float 8s infinite ease-in-out;
+    opacity: 0.3;
+}
+
+.hearts-background::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hearts-background::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.content {
+    background: #ffe6f0;
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-in;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    font-size: 3em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 200px;
+    position: relative;
+    width: 100%;
+}
+
+.yes-button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 25px 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+.yes-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+}
+
+.yes-button:active {
+    transform: scale(1.05);
+}
+
+.no-button {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.no-button:hover {
+    background: #7f8c8d;
+}
+
+/* Photo Frames */
+.photo-frame {
+    position: fixed;
+    background: white;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 0;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+.photo-frame:not(.hidden) {
+    opacity: 1;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.frame-1 {
+    width: 300px;
+    height: 300px;
+    top: 8%;
+    left: 5%;
+    transform: rotate(-12deg);
+    animation: breathe1 4s infinite ease-in-out;
+}
+
+.frame-2 {
+    width: 380px;
+    height: 280px;
+    top: 10%;
+    right: 8%;
+    transform: rotate(8deg);
+    animation: breathe2 4.5s infinite ease-in-out;
+}
+
+.frame-3 {
+    width: 250px;
+    height: 250px;
+    bottom: 15%;
+    left: 8%;
+    transform: rotate(15deg);
+    animation: breathe3 4.2s infinite ease-in-out;
+}
+
+.frame-4 {
+    width: 320px;
+    height: 260px;
+    bottom: 12%;
+    right: 6%;
+    transform: rotate(-10deg);
+    animation: breathe4 4.7s infinite ease-in-out;
+}
+
+.frame-5 {
+    width: 240px;
+    height: 240px;
+    top: 45%;
+    left: 3%;
+    transform: rotate(-18deg);
+    animation: breathe5 4.3s infinite ease-in-out;
+}
+
+/* Breathing animations for each frame */
+@keyframes breathe1 {
+    0%, 100% {
+        transform: rotate(-12deg) scale(1);
+    }
+    50% {
+        transform: rotate(-12deg) scale(1.05);
+    }
+}
+
+@keyframes breathe2 {
+    0%, 100% {
+        transform: rotate(8deg) scale(1);
+    }
+    50% {
+        transform: rotate(8deg) scale(1.05);
+    }
+}
+
+@keyframes breathe3 {
+    0%, 100% {
+        transform: rotate(15deg) scale(1);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.05);
+    }
+}
+
+@keyframes breathe4 {
+    0%, 100% {
+        transform: rotate(-10deg) scale(1);
+    }
+    50% {
+        transform: rotate(-10deg) scale(1.05);
+    }
+}
+
+@keyframes breathe5 {
+    0%, 100% {
+        transform: rotate(-18deg) scale(1);
+    }
+    50% {
+        transform: rotate(-18deg) scale(1.05);
+    }
+}
+
+/* Success Screen Styles */
+.celebration-title {
+    font-size: 4em;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.celebration-emoji {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.celebration-text {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.celebration-subtext {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hearts-animation {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3em;
+}
+
+.hearts-animation .heart {
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+.hearts-animation .heart:nth-child(1) { animation-delay: 0s; }
+.hearts-animation .heart:nth-child(2) { animation-delay: 0.1s; }
+.hearts-animation .heart:nth-child(3) { animation-delay: 0.2s; }
+.hearts-animation .heart:nth-child(4) { animation-delay: 0.3s; }
+.hearts-animation .heart:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Emoji Container for scattered emojis */
+#emoji-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.floating-emoji {
+    position: absolute;
+    font-size: 60px;
+    animation: floatEmoji 4s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatEmoji {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .photo-frame {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 40px 20px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .yes-button {
+        padding: 20px 40px;
+        font-size: 1.2em;
+    }
+
+    .no-button {
+        padding: 12px 24px;
+        font-size: 0.9em;
+    }
+
+    .floating-emoji {
+        font-size: 40px;
+    }
+}

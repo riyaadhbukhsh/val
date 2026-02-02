@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question... 💝</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hearts-background"></div>
+
+        <!-- Photo frames scattered around (hidden initially) -->
+        <div class="photo-frame frame-1 hidden" id="photo-1">
+            <img src="images/IMG_2115.jpg" alt="Memory">
+        </div>
+        <div class="photo-frame frame-2 hidden" id="photo-2">
+            <img src="images/image.JPG" alt="Memory">
+        </div>
+        <div class="photo-frame frame-3 hidden" id="photo-3">
+            <img src="images/IMG_2975.jpg" alt="Memory">
+        </div>
+        <div class="photo-frame frame-4 hidden" id="photo-4">
+            <img src="images/IMG_8704.jpg" alt="Memory">
+        </div>
+        <div class="photo-frame frame-5 hidden" id="photo-5">
+            <img src="images/DSCN4679_Original.jpg" alt="Memory">
+        </div>
+
+        <!-- Initial screen -->
+        <div class="content" id="initial-screen">
+            <h1 class="title">I have an important question to ask you</h1>
+            <div class="buttons">
+                <button class="yes-button" id="reveal-button">What is it? 💭</button>
+            </div>
+        </div>
+
+        <!-- Question screen -->
+        <div class="content hidden" id="question-screen">
+            <h1 class="title">Will You Be My Valentine?</h1>
+            <p class="subtitle">💕 This is the most important question... 💕</p>
+
+            <div class="buttons">
+                <button class="yes-button" id="yes-button">YES! 💖</button>
+                <button class="no-button" id="no-button">No</button>
+            </div>
+        </div>
+
+        <!-- Success screen -->
+        <div class="content hidden" id="success-screen">
+            <h1 class="celebration-title">🎉 Excellent! 🎉</h1>
+            <p class="celebration-emoji">🐻 ❤️ 🐤</p>
+            <p class="celebration-text">I knew you would say yes!</p>
+            <p class="celebration-subtext">I love you Yummy Tummy Chumster the Third my beautiful princess</p>
+            <div class="hearts-animation">
+                <span class="heart">❤️</span>
+                <span class="heart">💕</span>
+                <span class="heart">💖</span>
+                <span class="heart">💗</span>
+                <span class="heart">💝</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="emoji-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
